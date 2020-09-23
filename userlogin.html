@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<title>W3.CSS</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<body>
+	
+	<div class="w3-sidebar w3-bar-block w3-dark-grey w3-animate-left" style="display:none" id="mySidebar">
+	  <button class="w3-bar-item w3-button w3-large"
+	  onclick="w3_close()">Close &times;</button>
+	  <a href="#" class="w3-bar-item w3-button">Home</a>
+	  <a href="#" class="w3-bar-item w3-button">About</a>
+	  <a href='#' class="w3-bar-item w3-button">Contact us</a>
+	</div>
+	
+	<div>
+	  <button class="w3-button w3-white w3-xxlarge" onclick="w3_open()">&#9776;</button>
+	  <div class="w3-container">
+		
+	  </div>
+	</div>
+	
+	<script>
+	function w3_open() {
+		document.getElementById("mySidebar").style.display = "block";
+	}
+	function w3_close() {
+		document.getElementById("mySidebar").style.display = "none";
+	}
+	</script>
+	</body>
+
+
+<div class="pos-f-t">
+	<div class="collapse" id="navbarToggleExternalContent">
+	  <div class="bg-dark p-4">
+		<h4 class="text-white">Collapsed content</h4>
+		<span class="text-muted">Toggleable via the navbar brand.</span>
+	  </div>
+	</div>
+	<nav class="navbar navbar-dark bg-dark">
+
+		
+		<head>
+			<b>
+			<p style="color:tomato ;font-size:30px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We Deliver at your Convenience !!!
+				Order Online Now !!</p>
+				</b>
+		
+			</head>
+
+
+
+
+			
+		
+
+	
+	</nav>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid" style="position: relative;height: 900px;background-size: cover;background-image: url({%static "img/a2.jpg" %});"></div>
+
+<div class="container" style="position: absolute;top: 30px;right: 20px; width: 400px;height: 300px;background-color:black;margin-top: 300px;padding: 30px">
+	<h1 style="color:blanchedalmond;text-align: center;">Login</h1>
+
+
+
+
+	
+<form method="post" action="/customer/authenticate/">
+	 {% csrf_token %}
+	<input type="text" class="form-control" name="username" placeholder="Enter Your Email" style="margin-bottom: 10px">
+<input type="password" class="form-control" name="password" placeholder="Enter Your password" style="margin-bottom: 10px">
+<input type="submit" class="btn btn-success" style="display: block;margin: auto" name="">
+</form>
+{% for message in messages %}
+	<p style="text-align: center">{{message}}</p>
+{% endfor %}
+
+</div>
+
+
+
+
+{% endblock %}
